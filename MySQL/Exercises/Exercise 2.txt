@@ -1,0 +1,68 @@
+mysql> SELECT * FROM employees where dept="Loan";
++--------+------+-----------+------+
+| emp_id | name | desig     | dept |
++--------+------+-----------+------+
+|    101 | Raju | Manager   | Loan |
+|    103 | Paul | Associate | Loan |
++--------+------+-----------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employees where desig="Manager";
++--------+------+---------+------+
+| emp_id | name | desig   | dept |
++--------+------+---------+------+
+|    101 | Raju | Manager | Loan |
++--------+------+---------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employees where emp_id=101;
++--------+------+---------+------+
+| emp_id | name | desig   | dept |
++--------+------+---------+------+
+|    101 | Raju | Manager | Loan |
++--------+------+---------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT emp_id,name FROM employees where emp_id=101;
++--------+------+
+| emp_id | name |
++--------+------+
+|    101 | Raju |
++--------+------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE employees SET dept="IT" where emp_id=103;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM employees;
++--------+--------+------------+---------+
+| emp_id | name   | desig      | dept    |
++--------+--------+------------+---------+
+|    101 | Raju   | Manager    | Loan    |
+|    102 | Sham   | Cashier    | Cash    |
+|    103 | Paul   | Associate  | IT      |
+|    104 | Alex   | Accountant | Account |
+|    105 | Victor | Associate  | Deposit |
++--------+--------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> delete employees whre emp_id=101;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'whre emp_id=101' at line 1
+mysql> delete employees where emp_id=101;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where emp_id=101' at line 1
+mysql> delete from employees where emp_id=101;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM employees;
++--------+--------+------------+---------+
+| emp_id | name   | desig      | dept    |
++--------+--------+------------+---------+
+|    102 | Sham   | Cashier    | Cash    |
+|    103 | Paul   | Associate  | IT      |
+|    104 | Alex   | Accountant | Account |
+|    105 | Victor | Associate  | Deposit |
++--------+--------+------------+---------+
+4 rows in set (0.00 sec)
+
+mysql>

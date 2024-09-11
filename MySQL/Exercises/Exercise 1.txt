@@ -1,0 +1,67 @@
+mysql> CREATE DATABASE bank_db;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE bank_db;
+Database changed
+mysql> CREATE TABLE employees (emp_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,name VARCHAR(15) NOT NULL,desig VARCHAR(15) DEFAULT 'Probation',dept VARCHAR(15));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM employees;
+Empty set (0.00 sec)
+
+mysql> desc employees;
++--------+-------------+------+-----+-----------+----------------+
+| Field  | Type        | Null | Key | Default   | Extra          |
++--------+-------------+------+-----+-----------+----------------+
+| emp_id | int         | NO   | PRI | NULL      | auto_increment |
+| name   | varchar(15) | NO   |     | NULL      |                |
+| desig  | varchar(15) | YES  |     | Probation |                |
+| dept   | varchar(15) | YES  |     | NULL      |                |
++--------+-------------+------+-----+-----------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO employees VALUE (101,"Raju","Manager","Loan");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM employees;
++--------+------+---------+------+
+| emp_id | name | desig   | dept |
++--------+------+---------+------+
+|    101 | Raju | Manager | Loan |
++--------+------+---------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO employees(name,desig,dept) VALUE ("Sham","Cashier","Cash"),("Paul","Associate","Loan"),("Alex","Accountant","Account"),("Victor","Associate","Deposit");
+Query OK, 4 rows affected (0.00 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employees;
++--------+--------+------------+---------+
+| emp_id | name   | desig      | dept    |
++--------+--------+------------+---------+
+|    101 | Raju   | Manager    | Loan    |
+|    102 | Sham   | Cashier    | Cash    |
+|    103 | Paul   | Associate  | Loan    |
+|    104 | Alex   | Accountant | Account |
+|    105 | Victor | Associate  | Deposit |
++--------+--------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT emp_id,name FROM employees;
++--------+--------+
+| emp_id | name   |
++--------+--------+
+|    101 | Raju   |
+|    102 | Sham   |
+|    103 | Paul   |
+|    104 | Alex   |
+|    105 | Victor |
++--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> DROP DATABASE bank_db;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT emp_id,name FROM employees;
+ERROR 1046 (3D000): No database selected
+mysql>
