@@ -1,0 +1,114 @@
+Sure! Here’s an expanded list of practice questions, adding more depth and variety to each topic.
+
+--> 1. Listing and Creating a Database
+1. Create a new database named `school_db`.
+2. List all existing databases and check if `school_db` is created.
+3. Switch to the `school_db` database.
+4. Create another database named `library_db`. List both databases to confirm creation.
+
+--> 2. Creating and Managing Tables
+5. Create a table named `students` with columns: `id` (INT, AUTO_INCREMENT, PRIMARY KEY), `name` (VARCHAR), and `age` (INT).
+6. Describe the `students` table to see its structure.
+7. Insert three records into the `students` table with different names and ages.
+8. Update the age of a student in the `students` table to a new value.
+9. Delete a student from the `students` table based on a specific condition (e.g., name or ID).
+10. Drop the `students` table. Verify that it no longer exists.
+
+--> 3. String Functions
+11. Create a new table named `courses` with a column for the course name.
+12. Insert some course names into the `courses` table.
+13. Retrieve course names using the `UPPER` and `LOWER` functions to demonstrate both.
+14. Use the `CONCAT` function to combine two course names into a single string.
+15. Use the `REPLACE` function to change part of a course name from "Math" to "Mathematics".
+16. Use the `SUBSTR` function to retrieve the first three letters of each course name.
+
+--> 4. Data Manipulation
+17. Retrieve all unique course names from the `courses` table.
+18. Sort the course names in alphabetical order.
+19. Use the `LIKE` keyword to find courses that start with the letter 'A'.
+20. Use the `LIMIT` keyword to retrieve only the first two course names.
+21. Count the total number of courses in the `courses` table.
+22. Use `GROUP BY` to group courses by their name and count the number of times each appears.
+23. Create a query using `HAVING` to find courses with more than two students enrolled.
+
+--> 5. Data Types
+24. Create a new table named `grades` with columns for student ID (INT), course ID (INT), and grade (using the DECIMAL data type).
+25. Add a column to the `grades` table for storing the date of the grade entry using the DATETIME data type.
+26. Retrieve the current date and time using the appropriate functions.
+27. Create a table that includes a JSON column to store course materials.
+
+--> 6. Constraints and Operators
+28. Add a UNIQUE constraint to the `courses` table to prevent duplicate course names.
+29. Add a CHECK constraint to ensure that the age of students in the `students` table is greater than 0.
+30. Use the `CASE` statement to categorize students into different age groups (e.g., child, teen, adult).
+31. Write a query using the `IN` operator to find students whose IDs are in a specific list.
+
+--> 7. Altering Tables
+32. Alter the `students` table to add a new column for email (VARCHAR).
+33. Rename the `name` column in the `students` table to `full_name`.
+34. Modify the `age` column in the `students` table to allow NULL values.
+35. Drop the `email` column from the `students` table.
+
+--> 8. Relationships and Joins
+36. Create a new table named `enrollments` that links students to courses using foreign keys.
+37. Retrieve all students and their corresponding courses using an INNER JOIN.
+38. Retrieve all students and include courses even if they are not enrolled using a LEFT JOIN.
+39. Create a query to find students who are enrolled in more than one course using GROUP BY.
+
+--> 9. Views and Stored Routines
+40. Create a view named `student_courses` that shows students and the courses they are enrolled in.
+41. Write a stored procedure that accepts a student ID and returns their grades.
+42. Create a user-defined function that calculates the average grade for a specific course.
+43. Create a view that displays the total number of students enrolled in each course.
+
+--> 10. Additional Topics
+44. Create an index on the `name` column of the `students` table to improve search performance.
+45. Write a transaction that inserts a new student and a corresponding enrollment, ensuring both actions succeed or fail together.
+46. Create a trigger that automatically sets a timestamp whenever a new grade is inserted into the `grades` table.
+47. Load data from a CSV file into the `students` table.
+48. Export the data from the `students` table into a CSV file.
+49. Create a backup of your `school_db` database.
+50. Write a query to find the top-performing student in terms of grades using a subquery.
+
+
+
+
+--> Complex SQL Questions
+
+1. Student Performance Overview:
+   Write a query to retrieve the names of students along with their average grades across all courses. Include only those students who have an average grade above 75%. The result should also show the total number of courses they are enrolled in.
+
+2. Course Enrollment Analysis:
+   Find the courses with the highest enrollment numbers. The output should include the course name and the number of students enrolled. Sort the results by the number of students in descending order.
+
+3. Grade Distribution:
+   Create a report that shows the distribution of grades for each course. Include the course name, grade range (e.g., 0-50, 51-70, 71-85, 86-100), and the count of students in each grade range. Use a CASE statement to define the grade ranges.
+
+4. Top Students per Course:
+   Write a query to find the top student (highest grade) for each course. The output should include the course name, student name, and the student's grade. If there are ties for the highest grade, include all tied students.
+
+5. Student Activity Report:
+   Generate a report that shows each student's name, the courses they are enrolled in, and the total number of credits they are taking. Only include students who are taking more than 12 credits in total.
+
+6. Course Prerequisites:
+   Assume that each course can have prerequisites (other courses that must be completed before enrolling). Write a query to list all courses along with their prerequisites, if any. If a course has no prerequisites, it should still appear in the results.
+
+7. Average Grade by Department:
+   Create a query that calculates the average grade of students for each department (e.g., Science, Arts) across all courses. The output should include the department name and the average grade, sorted by average grade in descending order.
+
+8. Student Participation Over Time:
+   Write a query to analyze the number of students enrolled in each course over the last three semesters. The result should show the semester, course name, and the number of students enrolled, sorted by semester.
+
+9. Academic Standing:
+   Develop a query that assigns an academic standing (e.g., Good, Probation, At Risk) to each student based on their average grade. Students with an average grade above 85% are "Good", between 70% and 85% are "Probation", and below 70% are "At Risk". Include the student's name and their academic standing.
+
+10. Cross-Course Comparison:
+    Create a query that compares the average grades of students in two specific courses. The result should show the course names, average grades, and the difference between the two averages. If the difference is negative, indicate which course has the lower average.
+
+--> Bonus Challenge
+11. Scholarship Eligibility:
+    Write a complex query to find students eligible for a scholarship. Criteria include:
+    - Average grade of at least 85%.
+    - Enrollment in at least three courses.
+    - No course failures (grades below 60%).
+    The output should list student names and their average grades.
